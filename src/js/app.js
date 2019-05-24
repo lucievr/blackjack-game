@@ -11,11 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
     deck.shuffle();
 
     const dealerHand = document.querySelector('#dealer-hand .cards');
+    
     const cardDealer1 = deck.hit();
+    cardDealer1.flip();
     cardDealer1.mount(dealerHand);
 
     const cardDealer2 = deck.hit();
     cardDealer2.mount(dealerHand);
+
 
     dealer1 = new Dealer('Lucie', 0);
     dealer1.countScore(cardDealer1.rank);

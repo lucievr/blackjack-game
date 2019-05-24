@@ -5,7 +5,7 @@
   constructor(rank, suit) {
     this.rank = rank;
     this.suit = suit;
-    this.revealed = false;
+    this.revealed = true;
   }
 
   render() {
@@ -14,7 +14,16 @@
   }
 
   update() {
-      this.element.className = `card face-${this.rank}-of-${this.suit}`;  
+      if (this.revealed) {
+        this.element.className = `card face-${this.rank}-of-${this.suit}`;  
+      } else {
+        this.element.className = `card face-revers`;
+      }
+      
+  }
+
+  flip() {
+    this.revealed = !this.revealed  
   }
 
   mount(parent) {
