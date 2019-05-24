@@ -1,12 +1,12 @@
-
 class Game {
-    constructor() {
+    constructor(score) {
+        this.score = score;
     }
-  
+
     render() {
-      this.element = document.createElement('div');
-      this.element.className = 'game';
-      this.element.innerHTML = `
+        this.element = document.createElement('div');
+        this.element.className = 'game';
+        this.element.innerHTML = `
       <div id="dealer-hand" class="hand">
       <div class="score">Score: ?</div>
       <div class="cards">
@@ -20,17 +20,17 @@ class Game {
       <div class="cards">
 
       </div>
-      <div class="score">Score: 0</div>
+      <div class="score">Score</div>
       <div class="hand-controls">
         <button class="js-hit">HIT</button>
         <button class="js-stand">STAND</button>
       </div>
     </div>
-      `
-      return this.element;
+      `;
+        return this.element;
     }
-  
+
     mount(parent) {
-      parent.appendChild(this.render());
+        parent.appendChild(this.render());
     }
-  }
+}
