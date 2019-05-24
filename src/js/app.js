@@ -35,11 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     player1 = new Player('Marijan', 0);
     player1.countScore(cardPlayer1.rank);
     player1.countScore(cardPlayer2.rank);
-    console.log(player1.score);
 
     const dealerScore = document.querySelector('#dealer-hand .score');
-    dealerScore.textContent = `Score: ${dealer1.score}`;
-
+    
     const playerScore = document.querySelector('#player-hand .score');
     playerScore.textContent = `Score: ${player1.score}`;
 
@@ -51,10 +49,49 @@ document.addEventListener('DOMContentLoaded', () => {
         cardPlayer3.mount(playerHand);
         player1.countScore(cardPlayer3.rank);
         playerScore.textContent = `Score: ${player1.score}`;
+
+        if (player1.score >= 21) {
+            dealerScore.textContent = `Score: ${dealer1.score}`;
+            cardDealer1.flip();
+            cardDealer1.update();
+            if (player1.score = 21) {
+                setTimeout(() => {
+                    alert('The player has won!');
+                }, 1500);
+            }
+            if (player1.score > 21) {
+                setTimeout(() => {
+                    alert('The dealer has won!');
+                }, 1500);
+            }   
+        }
     });
 
-    // btnStand.addEventListener('click', () => {
+    btnStand.addEventListener('click', () => {
 
-    // }
-    // )
+        dealerScore.textContent = `Score: ${dealer1.score}`;
+        cardDealer1.flip();
+        cardDealer1.update();
+        if (dealer1.score > 21) {
+            setTimeout(() => {
+                alert('The player has won!');
+            }, 1500);
+        }  
+        if (dealer1.score = 21) {
+            setTimeout(() => {
+                alert('The dealer has won!');
+            }, 1500);
+        }   
+        if (dealer1.score < 17) {
+            const cardDealer3 = deck.hit();
+            cardDealer3.mount(dealerHand);
+            dealer1.countScore(cardDealer3.rank);
+            if (dealer1.score < 17) {
+                const cardDealer4 = deck.hit();
+                cardDealer4.mount(dealerHand); 
+                dealer1.countScore(cardDealer4.rank);
+            }
+        }
+    }
+    )
 });
