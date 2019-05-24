@@ -10,22 +10,11 @@
 
   render() {
     this.element = document.createElement('div');
-    this.element.className = `face-${this.rank}-of-${this.suit}`;
     return this.element;
   }
 
   update() {
-    if(this.revealed === 'closed') {
-      this.pacMouth = 'opened';
-    } else {
-      this.pacMouth = 'closed';
-    }
-
-    if(this.pacMouth === 'opened') {
-      this.element.style.backgroundPositionX = '0px';
-    } else {
-      this.element.style.backgroundPositionX = TILE_SIZE + 'px';
-    }
+      this.element.className = `card face-${this.rank}-of-${this.suit}`;  
   }
 
   mount(parent) {

@@ -6,8 +6,7 @@ class Game {
     render() {
       this.element = document.createElement('div');
       this.element.className = 'game';
-      this.element.innerHTML = `(
-
+      this.element.innerHTML = `
       <div id="dealer-hand" class="hand">
       <div class="score">Score: ?</div>
       <div class="cards">
@@ -28,7 +27,7 @@ class Game {
         <button class="js-stand">STAND</button>
       </div>
     </div>
-      )`
+      `
       return this.element;
     }
   

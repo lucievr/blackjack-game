@@ -1,3 +1,5 @@
+let revealed = false;
+
 document.addEventListener('DOMContentLoaded', () => {
   // Create and shuffle a new deck of cards
 
@@ -8,10 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const deck = new Deck();
   deck.shuffle();
 
-  const cards = document.querySelector('.cards');
+  const cards = document.querySelector('#player-hand .cards');
+  console.log(cards);
   const card = deck.hit();
+  console.log(card);
   card.mount(cards);
 
-  console.log(deck);
+  const btnHit = document.querySelector('.js-hit');
+  const btnStand = document.querySelector('.js-stand');
+
+  // btnHit.addEventListener('click', () => {
+   
+  // }
+  // )
+
+  // btnStand.addEventListener('click', () => {
+
+  // }
+  // )
 
 });
