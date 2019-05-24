@@ -1,0 +1,16 @@
+$bg-primary: #236937;
+$bg-action: #962800;
+$bg-dark: #a82d00;
+$font-size: 18px;
+
+@mixin shadow() {
+  box-shadow: 0 0 6px #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import "cards";
+@import "base";
+
