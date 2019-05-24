@@ -10,8 +10,7 @@ class Game {
       <div id="dealer-hand" class="hand">
       <div class="score">Score: ?</div>
       <div class="cards">
-        <div class="card face-10-of-hearts"></div>
-        <div class="card face-revers"></div>
+ 
       </div>
     </div>
     
