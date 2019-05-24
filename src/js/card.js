@@ -1,39 +1,39 @@
 /*
  * A playing card
  */
-
-class Card {
-  constructor(deck, rank, suit) {
-    this.deck = deck;
+ class Card {
+  constructor(rank, suit) {
     this.rank = rank;
     this.suit = suit;
+    this.revealed = false;
   }
 
   render() {
-    this.element = document.createElement("div");
-    this.element.className = "card";
+    this.element = document.createElement('div');
+    this.element.className = `face-${this.rank}-of-${this.suit}`;
     return this.element;
   }
 
   update() {
-    function randint(min, max) {
-      let i = Math.round(min + Math.random() * (max - min));
-      return i;
+    if(this.revealed === 'closed') {
+      this.pacMouth = 'opened';
+    } else {
+      this.pacMouth = 'closed';
     }
 
-    randit(0 , 51);
-
-    this.element.className = `face-${this.deck.cards[i].rank}-of-${
-      this.deck.cards[i].suit
-    }`;
+    if(this.pacMouth === 'opened') {
+      this.element.style.backgroundPositionX = '0px';
+    } else {
+      this.element.style.backgroundPositionX = TILE_SIZE + 'px';
+    }
   }
 
   mount(parent) {
     parent.appendChild(this.render());
-    // this.update();
+    this.update();
   }
 
   unmount(parent) {
     parent.removeChild(this.render());
   }
-}
+} 

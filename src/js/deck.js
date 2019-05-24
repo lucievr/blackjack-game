@@ -66,7 +66,9 @@ class Deck {
     ]
   }
 
-  
+  hit() {
+    return this.cards[this.cards.length - 1]
+  }
   /*
    * Fisher–Yates shuffle of the cards in the deck.
    */
