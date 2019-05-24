@@ -20,9 +20,10 @@ class Game {
   
     <div id="player-hand" class="hand">
       <div class="cards">
-        <div class="card face-5-of-clubs"></div>
-        <div class="card face-jack-of-spades"></div>
-        <div class="card face-2-of-diamonds"></div>
+        // <div class="card face-5-of-clubs"></div>
+        // <div class="card face-jack-of-spades"></div>
+
+        // <div class="card face-2-of-diamonds"></div>
       </div>
       <div class="score">Score: 0</div>
       <div class="hand-controls">

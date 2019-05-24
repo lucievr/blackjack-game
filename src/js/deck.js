@@ -66,6 +66,7 @@ class Deck {
     ]
   }
 
+  
   /*
    * Fisher–Yates shuffle of the cards in the deck.
    */
