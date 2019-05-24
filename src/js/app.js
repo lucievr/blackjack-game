@@ -34,19 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
     player1.countScore(cardPlayer2.rank);
     console.log(player1.score);
 
-    const btnHit = document.querySelector('.js-hit');
-    const btnStand = document.querySelector('.js-stand');
-
     const dealerScore = document.querySelector('#dealer-hand .score');
     dealerScore.textContent = `Score: ${dealer1.score}`;
 
     const playerScore = document.querySelector('#player-hand .score');
     playerScore.textContent = `Score: ${player1.score}`;
 
-    // btnHit.addEventListener('click', () => {
+    const btnHit = document.querySelector('.js-hit');
+    const btnStand = document.querySelector('.js-stand');
 
-    // }
-    // )
+    btnHit.addEventListener('click', () => {
+        const cardPlayer3 = deck.hit();
+        cardPlayer3.mount(playerHand);
+        player1.countScore(cardPlayer3.rank);
+        playerScore.textContent = `Score: ${player1.score}`;
+    });
 
     // btnStand.addEventListener('click', () => {
 
